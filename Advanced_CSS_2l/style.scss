@@ -1,0 +1,251 @@
+@import "./extend";
+
+body{
+    background-color: $color_gray;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+button{
+    width: 100px;
+    background-color: white;
+    height: 30px;
+    border-radius: 5px;
+}
+.fotos{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    img{
+        border-radius: 10px;
+        max-width: 95%; 
+        margin: auto;
+    }  
+        
+    .foto{
+        position: relative;
+        width: 100%;
+    }
+    .album{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .button{
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease-in-out;
+        background-color: rgb(17, 7, 77);
+    }  
+
+    .link{
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+.foto:hover .button{
+    opacity: 1;
+}
+
+
+
+
+@media (min-width:500px){
+    .fotos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+    }
+}
+
+
+@media (min-width:1024px){
+    body{
+        max-width: 1024px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .fotos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 8px;
+    }
+}
+
+@import "./extend";
+
+
+body{
+    background-color: $color_gray;
+}
+
+
+.blog{
+    background-color: #e17b77;
+}
+.facebook{
+    background-color: #3b5998;
+}
+.twitter{
+    background-color: #00aced;
+    width: 40opx;
+}
+.github{
+    background-color: #333;
+}
+.linkedin{
+    background-color: #007bb6;
+}
+
+
+a{
+    color: white;
+}
+img{
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+}
+
+
+.blog{
+    @include flex();
+    @include position();
+    bottom: 300px;
+}
+.blog:hover{
+    @include hover_social();
+}
+
+.twitter{
+    @include flex();
+    @include position();
+    bottom: 250px;
+}
+.twitter:hover{
+    @include hover_social();
+}
+
+.linkedin{
+    @include flex();
+    @include position();
+    bottom: 200px;
+
+}
+
+.linkedin:hover{
+    @include hover_social();
+}
+
+.facebook{
+    @include flex();
+    @include position();
+    bottom: 150px;
+}
+.facebook:hover{
+    @include hover_social();
+}
+.github{
+    @include flex();
+    @include position();
+    bottom: 100px;
+
+}
+.github:hover{
+    @include hover_social();
+}
+
+
+.blog::after{
+    content: "Check out my blog";
+    color: white;
+}
+.twitter::after{
+    content: "Follow me on Twitter";
+    color: white;
+}
+.linkedin::after{
+    content: "Connect on Linkedin";
+    color: white;
+}
+.facebook::after{
+    content: "Like my Facebook page";
+    color: white;
+}
+.github::after{
+    content: "See projects on Github";
+    color: white;
+}
+
+
+@import "./extend";
+@import "./body";
+
+
+footer{
+    @include private();
+    height: 300px;
+    background-color: $color_purple;
+    border-radius: 0px 0px 30px 30px;  
+    font-family: $text;
+    font-size: $size;
+    word-spacing: $letter;
+    margin-bottom: 30px;
+
+  
+    h2{
+        color: #fff;
+        text-transform: uppercase;
+        padding-top: 60px;
+        padding-bottom: -10px;
+    }
+    h3{
+        color: $color_gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: -10px;
+    }
+}
+
+section{
+    @include private();
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: $color_white 10px solid;
+        padding-top: 0px;
+        padding-bottom: -50px;
+        margin-bottom: -100px;
+    }
+}
+

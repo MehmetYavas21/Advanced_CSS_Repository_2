@@ -1,0 +1,50 @@
+$text: sans-serif;
+$size: 25px; 
+$letter: 0.1em;
+$color_white: #fff;
+$color_gray: #c3cfe2;
+$color_purple: #686de0;
+
+
+@mixin private {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin trans {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    width: auto;
+    position: relative;
+}
+
+@mixin hov {
+    border-radius: 10px;
+    width: auto;
+    background-color: rgb(17, 8, 74);
+    transform: rotate(0deg);
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    transition: all 0.5s; 
+    cursor: pointer;  
+}
+
+@mixin hover_social {
+    transform: translateX(-300px);
+}
+
+@mixin position{
+    position: fixed;
+    right: 0;
+    margin-right: -358px;
+    transition: ease 0.5s;
+    width: 400px;
+}
